@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./components/header/Header";
 import Homepage from "./pages/homePage/Homepage.jsx";
 import ShopPage from "./pages/shop/ShopPage";
 
@@ -8,6 +9,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/shop" component={ShopPage} />
