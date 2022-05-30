@@ -3,7 +3,7 @@ import ProductMenu from "../../components/ProductMenu";
 import { ProductMenuItem } from "../../components/ProductMenuItem";
 import "./Homepage.style.scss";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <div className="homepage">
       <ProductMenu />
@@ -11,4 +11,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;
