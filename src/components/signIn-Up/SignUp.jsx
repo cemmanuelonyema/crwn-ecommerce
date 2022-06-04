@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button from '../button/Button';
 import FormInput from '../form-input/Form-input';
 
-class SignUp extends Component { 
+class  SignUp extends Component { 
     state = {
         displayName: '',
         email: '',
