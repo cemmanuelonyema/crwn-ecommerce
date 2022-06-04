@@ -37,11 +37,12 @@ class ProductMenu extends Component {
       },
     ],
   };
+
   render() {
     return (
       <div className="dir-menu">
-        {this.state.menus.map((menu) => (
-          <ProductMenuItem key={menu.id} menu={menu} />
+        {this.state.menus.map(({id, ...otherProps}) => (
+          <ProductMenuItem key={id} {...otherProps}/>
         ))}
       </div>
     );

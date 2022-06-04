@@ -2,10 +2,10 @@
 //   min-width: 180px;
 //   width: auto;
 //   height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
-  padding: 10px 30px;
-  font-size: 15px;
+//   letter-spacing: 0.5px;
+//   line-height: 50px;
+  padding: 10px 20px;
+  font-size: 14px;
   background-color: black;
   color: white;
   text-transform: uppercase;
@@ -17,7 +17,7 @@
   &:hover {
     background-color: white;
     color: black;
-    // border: 1px solid black;
+    border: 1px solid black;
   }
   &.google-sign-in{
       color: white;
