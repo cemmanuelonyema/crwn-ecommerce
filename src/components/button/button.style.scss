@@ -1,9 +1,9 @@
 .button {
-//   min-width: 180px;
-//   width: auto;
-//   height: 50px;
-//   letter-spacing: 0.5px;
-//   line-height: 50px;
+  //   min-width: 180px;
+  //   width: auto;
+  //   height: 50px;
+  //   letter-spacing: 0.5px;
+  //   line-height: 50px;
   padding: 10px 20px;
   font-size: 14px;
   background-color: black;
@@ -19,13 +19,25 @@
     color: black;
     border: 1px solid black;
   }
-  &.google-sign-in{
-      color: white;
-      background-color: #4285f4;
+  &.google-sign-in {
+    color: white;
+    background-color: #4285f4;
 
-      &:hover{
-          background-color: #357ae8;
-          border: none;
-      }
+    &:hover {
+      background-color: #357ae8;
+      border: none;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
   }
 }

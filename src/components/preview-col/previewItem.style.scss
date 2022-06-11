@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
+  position: relative;
 
   .img {
     width: 100%;
@@ -11,6 +12,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+    transition: all 0.3s;
   }
 
   .preview-footer {
@@ -27,6 +29,25 @@
 
     .price {
       width: 10%;
+    }
+  }
+  .button {
+    width: 80%;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 40px;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateY(5px);
+  }
+  &:hover {
+    .img {
+      opacity: 0.7;
+    }
+    .button {
+      opacity: 0.8;
+      transform: translateY(0px);
+      opacity: 1;
     }
   }
 }
