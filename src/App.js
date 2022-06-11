@@ -8,6 +8,7 @@ import SignInPage from "./pages/sign-in/SignInPage.jsx";
 import ShopPage from "./pages/shop/ShopPage";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+
 class App extends Component {
   state = {
     currentUser: null,
@@ -71,4 +72,4 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser,
 });
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

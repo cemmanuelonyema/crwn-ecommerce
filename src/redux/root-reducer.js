@@ -1,9 +1,11 @@
 // The base reducer object that represents / combines all the state in app
 
 import { combineReducers } from "redux";
+import cartReducer from "./cart/cart.reducer";
 
 import userReducer from "./user/user.reducer";
 
 export default combineReducers({
-    user: userReducer
-})
+  user: userReducer,
+  cart: cartReducer,
+});

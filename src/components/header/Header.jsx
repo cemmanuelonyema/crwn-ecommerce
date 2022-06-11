@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 import "./header.style.scss";
 import { ReactComponent as Logo } from "../../assets/084 crown.svg";
 import { auth } from "../../firebase/firebase.utils";
+import CartIcon from "../cart/cartIcon/CartIcon";
+import CartDropDown from "../cart/cartDropDown/CartDropDown";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
         {" "}
         <Logo className="logo" />{" "}
       </Link>
+
       <nav className="nav">
         <Link to="/shop" className="nav-link">
           SHOP{" "}
@@ -28,14 +31,18 @@ const Header = ({ currentUser }) => {
             SIGN-IN
           </Link>
         )}
+        <CartIcon />
       </nav>
+      {hidden ? null : <CartDropDown />}
+      {/* <CartDropDown /> */}
     </div>
   );
 };
 
 // state param = rootReducer hence === state.user.currentUser === rootReducer.user.currentUser
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 
 export default connect(mapStateToProps)(Header);
