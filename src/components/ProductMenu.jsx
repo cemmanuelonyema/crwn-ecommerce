@@ -1,52 +1,24 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectMenus } from "../redux/data/data.selectors";
 import "./ProductMenu.style.scss";
 import { ProductMenuItem } from "./ProductMenuItem";
 
-class ProductMenu extends Component {
-  state = {
-    menus: [
-      {
-        title: "hats",
-        imgUrl: "https://i.ibb.co/cvpntL1/hats.png",
-        id: 1,
-        size: "",
-      },
-      {
-        title: "jackets",
-        imgUrl: "https://i.ibb.co/cvpntL1/hats.png",
-        id: 2,
-        size: "",
-      },
-      {
-        title: "shoes",
-        imgUrl: "https://i.ibb.co/cvpntL1/hats.png",
-        id: 3,
-        size: "",
-      },
-      {
-        title: "Women",
-        imgUrl: "https://i.ibb.co/cvpntL1/hats.png",
-        id: 4,
-        size: "large",
-      },
-      {
-        title: "Men",
-        imgUrl: "https://i.ibb.co/cvpntL1/hats.png",
-        id: 5,
-        size: "large",
-      },
-    ],
-  };
+const ProductMenu = ({ menus }) => {
+  return (
+    <div className="dir-menu">
+      {/* {menus.map(({ id, ...otherProps }) => (
+        <ProductMenuItem key={id} {...otherProps} />
+      ))} */}
+      {menus.map((menu) => (
+        <ProductMenuItem key={menu.id} menuItem={menu} />
+      ))}
+    </div>
+  );
+};
+const mapStateToProps = createStructuredSelector({
+  menus: selectMenus,
+});
 
-  render() {
-    return (
-      <div className="dir-menu">
-        {this.state.menus.map(({id, ...otherProps}) => (
-          <ProductMenuItem key={id} {...otherProps}/>
-        ))}
-      </div>
-    );
-  }
-}
-
-export default ProductMenu;
+export default connect(mapStateToProps)(ProductMenu);
