@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectMenus } from "../redux/data/data.selectors";
+import { selectMenus } from "../redux/data/productMenu/productMenu.selector";
 import "./ProductMenu.style.scss";
 import { ProductMenuItem } from "./ProductMenuItem";
 
