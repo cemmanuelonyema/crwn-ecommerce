@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -55,18 +55,12 @@ class App extends Component {
       <Fragment>
         {/* <Header currentUser={this.state.currentUser} /> */}
         <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/checkout" component={Checkout} />
-          <Route exact path="/shop" component={ShopPage} />
-          <Route
-            exact
-            path="/sign-in"
-            render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
-            }
-          />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/shop/*" element={<ShopPage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+        </Routes>
       </Fragment>
     );
   }
