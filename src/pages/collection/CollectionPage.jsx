@@ -8,16 +8,13 @@ import "./collectionPage.scss";
 const CollectionPage = ({}) => {
   const { collectionId } = useParams();
 
-  const [categoryProducts] = useSelector((state) => {
-    console.log(state);
-    return state.shop.collections.filter(
-      (collection) => collection.routeName === collectionId
-    );
-  });
+  const collections = useSelector(
+    (state) => state.shop.collections[collectionId]
+  );
 
-  console.log("categoryProducts", categoryProducts);
+  console.log("collections", collections);
   console.log(collectionId);
-  const { title, items } = categoryProducts;
+  const { title, items } = collections;
   console.log(title, items);
   return (
     <div className="collection-page">
@@ -31,13 +28,4 @@ const CollectionPage = ({}) => {
   );
 };
 
-// const mapStateToProps = (state, ownProps) => {
-//     console.log
-//   console.log(state);
-//   return {
-//     prop: state.prop,
-//   };
-// };
-
-// export default connect(mapStateToProps)(CollectionPage);
 export default CollectionPage;
